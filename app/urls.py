@@ -12,6 +12,7 @@ urlpatterns = [
     path('home', views.home, name="home"),
     path('arcade', views.arcade, name="arcade"),
     path('tetris', views.tetris, name="tetris"),
+    path('paint', views.paint, name="paint"),
     path('colorpicker', views.colorpicker, name="colorpicker"),
     path('snake', views.snake, name="snake"),
     path('googlemap', views.googlemap, name="googlemap"),
