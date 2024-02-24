@@ -52,6 +52,9 @@ def tetris(request):
 def snake(request): 
     return render(request, 'snake.html')
 
+def paint(request): 
+    return render(request, 'paint.html')
+
 @login_required()
 def password(request): 
     try:
