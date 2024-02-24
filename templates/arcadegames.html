@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.cdnfonts.com/css/atari" rel="stylesheet">
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <!-- <link rel="stylesheet" href="{% static "css/style.css" %}"> -->
+  <title>CAC / arcade</title>
+</head>
+
+<body>
+
+  <main>
+    <a href="pong">
+      <h1>PONG</h1>
+    </a>
+    <a href="tetris">
+      <h1>TETRIS</h1>
+    </a>
+    <a href="snake">
+      <h1>SNAKE</h1>
+    </a>
+    <a href="mario">
+      <h1>MARIO</h1>
+    </a>
+
+    <a href="arcade">
+      <h1>BACK</h1>
+    </a>
+  </main>
+
+</body>
+<style>
+  body {
+    background: black;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    font-family: 'Atari', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+  }
+
+  main,
+  h1,
+  h2 {
+    font-family: 'Atari', sans-serif;
+    font-size: 50px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  h1:hover {
+    font-size: 70px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+</style>
+<style>
+  @import url('https://fonts.cdnfonts.com/css/atari');
+</style>
+
+</html>

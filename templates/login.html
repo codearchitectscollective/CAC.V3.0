@@ -1,0 +1,401 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <!-- end google fonts -->
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <title>CAC / sign up</title>
+</head>
+
+<body data-theme="dark">
+ 
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="container max-width-sm position-relative z-index-2" style="background-color: white; box-shadow: 20px 20px 15px rgba(0, 0, 0, 0.616); border-radius: 10px;">
+
+      <!--don't touch the names of the elements Bitch-->
+        <form method = "POST" action = "login" id="rezform" class="rezform">
+          {% csrf_token %}
+          
+          <div class="text-component text-center margin-bottom-xl">
+            <a href="home" class="close" title="Close Modal">&times;</a>
+            <h1>Log In To Your Account</h1>
+            {% if messages %}
+            {% for message in messages %}
+            {% if 'succes' in message.tags %}
+            <div class="alert alert{{message.tags}}" role="alert">
+              {{ message }}
+            </div>
+            {% endif%}
+            {% endfor %}
+            {% endif %}
+            <p class="color-contrast-medium">
+
+              If you haven't created an account yet <a href="signup" style="text-decoration: none;">Signup</a> now.
+            </p>          </div>
+          <!-- <legend style="text-align: center;" class="form-legend">Sign Up</legend> -->
+
+          <div class="rezform-control">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="rezemail" placeholder="Enter Username">
+            <input type="hidden" name="next" value="{{ next }}">
+            <!-- {% for message in messages %} -->
+            <!-- <small class="padding-xxs radius-md text-xs color-contrast-higher margin-top-xxs">{{message}}</small> -->
+            <!-- {% endfor %} -->
+          </div>
+
+          <div class="rezform-control">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="rezpassword" placeholder="Enter password">
+            {% for message in messages %}
+            {% if 'error' in message.tags %}
+            <p class="padding-xxs radius-md text-xs color-contrast-higher margin-top-xxs">{{message}}</p>
+            {% elif 'info' in message.tags%}
+            <p class="padding-xxs radius-md text-xs color-contrast-higher margin-top-xxs">{{message}}</p>
+            {% endif %}
+            {% endfor %}
+          </div>
+
+          <fieldset class="margin-bottom-md">                                 
+            <label for="checkbox-2">Forgot your password? <a style="text-decoration: none;" href="forgetpass">Reset</a></label>
+          </fieldset> 
+          
+          <button style="width: 100%;" class="bttn-dark bzbz btn btn--primary" type="submit">Login</button>
+        </form>
+      
+      
+    </div>
+    <figure class="bg-decoration z-index-1" aria-hidden="true">
+      <svg class="bg-decoration__svg color-contrast-low" viewBox="0 0 1920 450" fill="none">
+        <circle class="blend-overlay" opacity="0.5" cx="1745" cy="159" r="175"
+          fill="url(#bg-decoration-v1-fx-4-radial-1)" />
+        <circle opacity="0.5" r="65" transform="matrix(-1 0 0 1 240 110)" fill="url(#bg-decoration-v1-fx-4-radial-2)" />
+        <g opacity="0.5" filter="url(#bg-decoration-v1-fx-4-filter-1)">
+          <circle r="26" transform="matrix(-1 0 0 1 298 386)" fill="var(--color-primary)" />
+        </g>
+        <circle class="blend-overlay" opacity="0.5" cx="1470" cy="-299" r="439"
+          fill="url(#bg-decoration-v1-fx-4-radial-3)" />
+        <defs>
+          <filter id="bg-decoration-v1-fx-4-filter-1" x="267" y="355" width="62" height="62"
+            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feGaussianBlur stdDeviation="2.5" result="effect1_foregroundBlur" />
+          </filter>
+          <radialGradient id="bg-decoration-v1-fx-4-radial-1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(1745 159) rotate(90) scale(175)">
+            <stop stop-color="var(--color-primary)" stop-opacity="0" />
+            <stop offset="1" stop-color="var(--color-primary)" />
+          </radialGradient>
+          <radialGradient id="bg-decoration-v1-fx-4-radial-2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="scale(65)">
+            <stop stop-color="var(--color-accent)" stop-opacity="0" />
+            <stop offset="1" stop-color="var(--color-accent)" />
+          </radialGradient>
+          <radialGradient id="bg-decoration-v1-fx-4-radial-3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+            gradientTransform="translate(1470 -299) rotate(90) scale(439)">
+            <stop stop-color="var(--color-accent)" stop-opacity="0" />
+            <stop offset="1" stop-color="var(--color-accent)" />
+          </radialGradient>
+        </defs>
+      </svg>
+    </figure>
+  </section> 
+
+<!-- form inputs and validation errors -->
+  <style>
+      @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+    
+      :root {
+        --succes-color: #2ecc71;
+        --error-color: #e74c3c;
+      }
+    
+      .rezform {
+        padding: 30px 40px;
+      }
+    
+      .rezform-control {
+        margin-bottom: 0px;
+        padding-bottom: 20px;
+        position: relative;
+      }
+    
+      .rezform-control label {
+        color: #494949;
+        display: block;
+        margin-bottom: 5px;
+      }
+    
+      .rezform-control input {
+        border: 3px solid;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        box-shadow: 1px 1px 0.5px rgba(0, 0, 0, 0.645);
+      }
+    
+      .rezform-control input:focus {
+        outline: 0;
+        border-color: #777;
+      }
+    
+      .rezform-control.success input {
+        border-color: var(--succes-color);
+      }
+    
+      .rezform-control.error input {
+        border-color: var(--error-color);
+      }
+    
+      .rezform-control p {
+        color: white;
+        font-size: 12px;
+        position: relative;
+        top: -5px;
+        left: 0;
+        visibility: visible;
+        background-color: red;
+
+      }
+    
+  </style>
+
+ <!-- animated button -->
+  <style>
+  @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:700';
+  
+  .bzbz {
+    background: black;
+  }
+  
+  .flex {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+    background: #F5F0FF;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  a.bttn {
+    color: hotpink;
+    text-decoration: none;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s ease all;
+  }
+  a.bttn:hover {
+    color: #FFF;
+  }
+  a.bttn:focus {
+    color: #FFF;
+  }
+  
+  a.bttn-dark {
+    color: #644cad;
+    text-decoration: none;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s ease all;
+  }
+  a.bttn-dark:hover {
+    color: #FFF;
+  }
+  a.bttn-dark:focus {
+    color: #FFF;
+  }
+  
+  .bttn {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 270px;
+    font-weight: bold;
+    padding: 14px 0px;
+    border: 3px solid hotpink;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  .bttn:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: hotpink;
+    z-index: -2;
+  }
+  .bttn:hover:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  .bttn:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  
+  .bttn-dark {
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+    text-align: center;
+    width: 270px;
+    font-weight: bold;
+    padding: 14px 0px;
+    border: 3px solid black;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+  .bttn-dark:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: "";
+    background-color: rgb(33, 75, 199);
+    z-index: -1;
+  }
+  .bttn-dark:hover:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  }
+  .bttn-dark:focus:before {
+    -webkit-transition: 0.5s all ease;
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+  } 
+
+  /* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 20px;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: red;
+  font-size: 50px;
+  top: 3px;
+}
+  </style>
+    
+  <!-- <script>
+      const form = document.getElementById("rezform");
+      const email = document.getElementById("rezemail");
+      const password = document.getElementById("rezpassword");
+    
+      //Show input error messages
+      function showError(input, message) {
+        const formControl = input.parentElement;
+        formControl.className = "rezform-control error";
+        const small = formControl.querySelector("small");
+        small.innerText = message;
+      }
+    
+      //show success colour
+      function showSucces(input) {
+        const formControl = input.parentElement;
+        formControl.className = "rezform-control success";
+      }
+    
+      //check email is valid
+      function checkEmail(input) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(input.value.trim())) {
+          showSucces(input);
+        } else {
+          showError(input, "Error: Email is not invalid");
+        }
+      }
+    
+      //checkRequired fields
+      function checkRequired(inputArr) {
+        inputArr.forEach(function (input) {
+          if (input.value.trim() === "") {
+            showError(input, `Error: ${getFieldName(input)} is required`);
+          } else {
+            showSucces(input);
+          }
+        });
+      }
+    
+      //check input Length
+      function checkLength(input, min, max) {
+        if (input.value.length < min) {
+          showError(
+            input,
+            `Error: ${getFieldName(input)} must be at least ${min} characters`
+          );
+        } else if (input.value.length > max) {
+          showError(
+            input,
+            `${getFieldName(input)} must be les than ${max} characters`
+          );
+        } else {
+          showSucces(input);
+        }
+      }
+    
+      //get FieldName
+      function getFieldName(input) {
+        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+      }
+    
+    
+      //Event Listeners
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+    
+        checkRequired([email, password]);
+        checkLength(password, 6, 25);
+        checkEmail(email);
+      });
+  </script> -->
+
+
+</html>

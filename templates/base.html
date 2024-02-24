@@ -1,0 +1,185 @@
+{% load static %}
+<!doctype html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<html lang="en">
+  <style>
+    /* Center the loader */
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 120px;
+      height: 120px;
+      margin: -76px 0 0 -76px;
+      border: 16px solid #acacac;
+      border-radius: 50%;
+      border-top: 16px solid red;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+    
+    @-webkit-keyframes spin {
+      0% { -webkit-transform: rotate(0deg); }
+      100% { -webkit-transform: rotate(360deg); }
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Add animation to "page content" */
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+    
+    @-webkit-keyframes animatebottom {
+      from { bottom:-100px; opacity:0 } 
+      to { bottom:0px; opacity:1 }
+    }
+    
+    @keyframes animatebottom { 
+      from{ bottom:-100px; opacity:0 } 
+      to{ bottom:0; opacity:1 }
+    }
+    
+    #myDiv {
+      display: none;
+      text-align: center;
+    }
+    </style>
+<body onload="myFunction()">
+
+
+  <header class="f-header position-relative js-f-header">
+    
+
+    <!-- mobile navbar -->
+    <div class="f-header__mobile-content container max-width-lg">
+      <a href="home" class="nav f-header__logo"> 
+        <img class="lo" src="{% static "img/navlogo.jpg"%}" alt="CAC LOGO">                 
+      </a> 
+
+      <button style="color: white;" class="reset anim-menu-btn js-anim-menu-btn f-header__nav-control js-tab-focus" aria-label="Toggle menu">
+        <i class="anim-menu-btn__icon anim-menu-btn__icon--close" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div style="background-color: #b81d18; " class="f-header__nav" role="navigation">
+      <div class="f-header__nav-grid justify-between@md container max-width-lg">
+    
+
+        <div class="f-header__nav-logo-wrapper flex-grow flex-basis-0">
+          <img class="lo" src="{% static "img/navlogo.jpg"%}" alt="CAC LOGO">&nbsp;
+          <a href="home" class="nav f-header__logo">
+            <h2 class="nav">CAC</h2>
+          </a>
+        </div>
+
+
+        <ul dir="auto" class="f-header__list flex-grow flex-basis-0 justify-center@md">
+
+          <!-- <li class="f-header__item">
+            <a href="blogmenu" class="nav f-header__link">
+              <span>Blog</span>
+              <svg class="f-header__dropdown-icon icon" aria-hidden="true" viewBox="0 0 12 12"><path d="M9.943,4.269A.5.5,0,0,0,9.5,4h-7a.5.5,0,0,0-.41.787l3.5,5a.5.5,0,0,0,.82,0l3.5-5A.5.5,0,0,0,9.943,4.269Z"/></svg>
+            </a>
+  
+            <ul class="f-header__dropdown">
+              <li><a href="#0" class="f-header__dropdown-link">Python</a></li>
+              <li><a href="#0" class="f-header__dropdown-link">Javascript</a></li>
+              <li><a href="#0" class="f-header__dropdown-link">FrontEnd</a></li>
+              <li><a href="#0" class="f-header__dropdown-link">BackEnd</a></li>
+            </ul>
+          </li> -->
+
+          <li class="f-header__item"><a href="blogmenu" class="nav f-header__link">Blog</a></li>
+          <li class="f-header__item"><a href="projects" class="nav f-header__link">Projects</a></li>
+          <li class="f-header__item"><a href="timeline" class="nav f-header__link" aria-current="page">CAC Timeline</a>
+          </li>
+          <li class="f-header__item"><a href="purchase" class="nav f-header__link">Purchase</a></li>
+          <li class="f-header__item"><a href="contact" class="nav f-header__link">Contact</a></li>
+
+        
+
+          <li class="f-header__item">
+            <a style="text-decoration: none;" href="https://www.linkedin.com/in/code-architects-collective-1b40982a4/"
+              class="f-header__link f-header__link--icon" aria-label="Follow us on linkedin">
+              <svg class="icon"><i id="x" class="nav fa fa-linkedin-square"></i></svg>
+            </a>
+          </li>
+
+          <li class="f-header__item">
+            <a style="text-decoration: none;" href="https://github.com/" class="f-header__link f-header__link--icon"
+              aria-label="Follow us on github">
+              <svg class="icon"><i id="x" class="nav fa fa-github-square"></i></svg>
+            </a>
+          </li>
+
+          <!-- <li class="f-header__item">
+            <a style="text-decoration: none;" href="https://www.youtube.com/"
+              class="f-header__link f-header__link--icon" aria-label="Follow us on youtube">
+              <svg class="icon"><i id="x" class="nav fa fa fa-youtube"></i></svg>
+            </a>
+          </li> -->
+
+          <li class="f-header__item">
+            <a style="text-decoration: none;" href="arcade" class="f-header__link f-header__link--icon"
+              aria-label="Follow us on arcade">
+              <svg class="icon"><i id="x" class="nav fa fa fa-gamepad"></i></svg>
+            </a>
+          </li>
+
+          <li class="f-header__item">
+            <a style="text-decoration: none;" href="{% url 'login' %}?next=/profile" class="f-header__link f-header__link--icon"
+              aria-label="Follow us on arcade">
+              <svg class="icon"><i id="x" class="nav fa fa fa-gear"></i></svg>
+            </a>
+          </li>
+
+          {% if user.is_authenticated %}
+        
+          <a id="xmyBtn" style="text-decoration: none;" href="logout" class="f-header__link f-header__link--icon" aria-label="login">
+            <svg class="icon"><i onclick="logoutalert()" style="color: white;" id="x" class="fa fa fa-sign-in">&nbsp;logout</i></svg>
+          {% else %}
+          </a>
+  
+        
+          <a id="xmyBtn" style="text-decoration: none;" href="login" class="f-header__link f-header__link--icon" aria-label="login">
+            <svg class="icon"><i style="color: white;" id="x" class="fa fa fa-sign-in">&nbsp;login</i></svg>
+          {% endif%}
+          </a>
+        </ul>
+
+
+
+       
+      </div>
+    </div>
+              
+  </header>
+  {% block content %}
+  {% endblock %}
+</body>
+<script>
+  var myVar;
+  
+  function myFunction() {
+    myVar = setTimeout(showPage, 250);
+  }
+  
+  function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+  }
+
+  function logoutalert() {
+    alert("You have Log out of your account successfully");
+  }
+  </script>

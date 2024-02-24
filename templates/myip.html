@@ -1,0 +1,44 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"   rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+  <script>$.getJSON("https://api.ipify.org?format=json", function(data) {$("#ip").html(data.ip);})</script> 
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <title>CAC / Get My Ip</title>
+</head>
+
+<body style="background-color: black;">
+
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="container max-width-adaptive-lg">
+      <div class="p-table p-table--has-switch js-p-table--has-switch">
+          <div style="text-align: center; background-color: rgb(28, 28, 28);" class="p-table__item p-table__item--popular col-4@md">
+            <div style="text-align: center;" class="flex justify-center items-center margin-bottom-xxs">
+              <h4 style="color: white;" class="title">Your Ip Address is:</h4>
+            </div>
+
+            <div class="p-table__price-wrapper margin-bottom-sm">
+              <div class="p-table__price"  >
+                <span style="color: white;" id="ip">. . .</span>                
+              </div>
+            </div>
+
+            <div class="margin-top-auto">
+              <a href="tools" class="btn btn--primary btn--md width-100%">
+                Back to tools page
+              </a>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

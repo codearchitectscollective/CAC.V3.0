@@ -1,0 +1,377 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image" href="{% static " img/titleicon.png"%}">
+  <title>CAC / Lorem Ipsum Generator</title>
+</head>
+
+<body style="background-color: rgb(28, 28, 28);">
+
+
+  <header>
+    <h1>CAC Lorem Ipsum Generator</h1>
+  </header>
+  <main>
+    <div class="options">
+      <div class="paragraphs">
+        <label for="paragraphs">
+          Paragraphs:
+        </label>
+        <input type="range" id="paragraphs" min="1" max="50" value="1">
+        <span id="paragraphsValue">
+          1
+        </span>
+      </div>
+      <div class="words">
+        <label for="words">
+          Words per Paragraph:
+        </label>
+        <input type="range" id="words" min="1" max="100" value="10">
+        <span id="wordsValue">
+          10
+        </span>
+      </div>
+      <div class="tags">
+        <label for="tags">
+          Tag:
+        </label>
+        <select id="tags">
+        </select>
+      </div>
+      <div class="include">
+        <label for="include">
+          Include HTML:
+        </label>
+        <select id="include">
+          <option value="Yes">
+            Yes
+          </option>
+          <option value="No">
+            No
+          </option>
+        </select>
+      </div>
+      <button id="generate">
+        Generate Lorem Ipsum
+      </button>
+
+    </div>
+    <div class="output">
+
+      <!-- Lorem Ipsum text will 
+                           be displayed here -->
+                           
+    </div><br>
+    <a href="tools">
+    <button id="exit">
+      Back to tools page
+    </button>
+  </a>
+  </main>
+
+</body>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  header {
+    background-color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+
+  .options {
+    margin-bottom: 20px;
+  }
+
+  .options label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .options input[type="range"],
+  .options select,
+  .options input[type="number"] {
+    width: 100%;
+    padding: 17px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 13px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: #000;
+  }
+
+  .options select {
+    appearance: none;
+  }
+
+  .options button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: red;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #exit {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: blue;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .options button:hover {
+    background-color: rgb(20, 107, 20);
+  }
+
+  .output {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid crimson;
+    min-height: 200px;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+  }
+</style>
+
+<script>
+  // Script.js 
+
+  // Constants for tag options 
+  const tagOptions = [
+    "p", "h1", "h2",
+    "h3", "h4", "h5",
+    "h6", "span",
+  ];
+
+  // Get DOM elements 
+  const optionsContainer =
+    document.querySelector(".options");
+  const outputContainer =
+    document.querySelector(".output");
+  const tagsSelect =
+    document.getElementById("tags");
+  const paragraphsSlider =
+    document.getElementById(
+      "paragraphs"
+    );
+  const wordsSlider =
+    document.getElementById("words");
+  const paragraphsValue =
+    document.getElementById(
+      "paragraphsValue"
+    );
+  const wordsValue =
+    document.getElementById(
+      "wordsValue"
+    );
+
+  // Create Options UI 
+  function createOptionsUI() {
+
+    //  With tag options, fill up the <select> element. 
+    tagOptions.forEach((tag) => {
+      const option =
+        document.createElement(
+          "option"
+        );
+      option.value = tag;
+      option.textContent = `<${tag}>`;
+      tagsSelect.appendChild(option);
+    });
+
+    //  Event listeners for sliders 
+    paragraphsSlider.addEventListener(
+      "input",
+      updateParagraphsValue
+    );
+    wordsSlider.addEventListener(
+      "input",
+      updateWordsValue
+    );
+
+    const generateButton =
+      document.getElementById(
+        "generate"
+      );
+    generateButton.addEventListener(
+      "click",
+      generateLoremIpsum
+    );
+  }
+
+  // Update the displayed value for Paragraphs 
+  function updateParagraphsValue() {
+    paragraphsValue.textContent =
+      paragraphsSlider.value;
+  }
+
+  // Words per Paragraph have got  
+  // to be updated on the display 
+  function updateWordsValue() {
+    wordsValue.textContent =
+      wordsSlider.value;
+  }
+
+  // Generate Lorem Ipsum text 
+  function generateLoremIpsum() {
+    const paragraphs = parseInt(
+      paragraphsSlider.value
+    );
+    const tag =
+      document.getElementById(
+        "tags"
+      ).value;
+    const includeHtml =
+      document.getElementById(
+        "include"
+      ).value;
+    const wordsPerParagraph = parseInt(
+      wordsSlider.value
+    );
+
+    const loremIpsumText = generateText(
+      paragraphs,
+      tag,
+      includeHtml,
+      wordsPerParagraph
+    );
+    displayLoremIpsum(loremIpsumText);
+  }
+
+  // Function to generate Lorem Ipsum text 
+  function generateText(
+    paragraphs,
+    tag,
+    includeHtml,
+    wordsPerParagraph
+  ) {
+
+    //  Use a placeholder text as an  
+    //  Example for illustrating. 
+    const placeholderText =
+      `Lorem ipsum dolor sit amet  
+        consectetur adipiscing elit sed  
+        do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua.`;
+
+    // Create an array of paragraphs 
+    const loremIpsumArray = new Array(
+      paragraphs
+    ).fill("");
+
+    // Generate words for each paragraph 
+    for (
+      let i = 0;
+      i < paragraphs;
+      i++
+    ) {
+      const words = generateWords(
+        wordsPerParagraph
+      );
+      loremIpsumArray[i] =
+        includeHtml === "Yes"
+          ? `<${tag}>${words}</${tag}>`
+          : words;
+    }
+
+    // Join paragraphs into a single string 
+    return loremIpsumArray.join("\n");
+  }
+
+  // Function to generate a specified number of words 
+  function generateWords(numWords) {
+
+    // Lorem Ipsum text for demonstration purposes 
+    const loremIpsumText =
+      `Lorem ipsum dolor sit amet, consectetur  
+        adipiscing elit, sed do eiusmod tempor  
+        incididunt ut labore et dolore magna  
+        aliqua. Diam in arcu cursus euismod  
+        quis viverra nibh. Nunc aliquet bibendum 
+        enim facilisis gravida neque convallis  
+        a cras. Sagittis purus sit amet volutpat 
+        Consequat mauris. Duis ultricies lacus  
+        sed turpis tincidunt id. Consequat interdum 
+        varius sit amet mattis vulputate. Enim sed 
+        faucibus turpis in eu. Ridiculus mus mauris 
+        vitae ultricies leo integer malesuada nunc vel. 
+        Nulla pharetra diam sit amet nisl suscipit. 
+        Lobortis elementum nibh tellus molestie nunc 
+        non blandit massa enim. Dis parturient montes 
+        nascetur ridiculus mus. Justo nec ultrices dui 
+        sapien eget. Enim tortor at auctor urna nunc. 
+        Dictumst quisque sagittis purus sit amet volutpat 
+        consequat mauris nunc.`;
+
+
+    // Split the Lorem Ipsum text into words 
+    const words =
+      loremIpsumText.split(" ");
+
+    // Ensure the number of words requested is  
+    // within the bounds of the available words 
+    if (numWords <= words.length) {
+      return words
+        .slice(0, numWords)
+        .join(" ");
+    } else {
+      return words.join(" ");
+    }
+  }
+
+  // Display Lorem Ipsum text 
+  function displayLoremIpsum(text) {
+    outputContainer.innerHTML = text;
+  }
+
+  // Initialize the app 
+  createOptionsUI();
+</script>
+
+</html>

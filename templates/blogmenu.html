@@ -1,0 +1,1196 @@
+{% extends "base.html" %}
+{% load static %}
+
+  {% block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.getElementsByTagName("html")[0].className += " js";</script>
+  <!-- google fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <!-- end google fonts -->
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <title>CAC / blogmenu</title>
+</head>
+
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
+  <section class="sliderx_container">
+    <section class="sliderx">
+      <div class="slidex one">
+        <a href="blog">
+          <img src="{% static "img/slider.img1.jpg"%}" alt="">
+
+          <span class="text-caption">
+            latest gaming news & details
+          </span>
+
+
+          <span class="title-caption">
+            Gamer Section
+          </span>
+        </a>
+      </div>
+
+      <div class="slidex two">
+        <a href="blog">
+          <img src="{% static "img/programmer.jpg"%}" alt="">
+
+          <span class="text-caption">
+            latest updates & coding tricks
+          </span>
+
+          <span class="title-caption">
+            programmer Section
+          </span>
+        </a>
+      </div>
+
+      <div class="slidex three">
+        <a href="blog">
+          <img src="{% static "img/hardwareslider.jpg"%}" alt="">
+
+          <span class="text-caption">
+            best computer hardware's technology
+          </span>
+
+          <span class="title-caption">
+            pc hardware Section
+          </span>
+        </a>
+      </div>
+
+      <div class="slidex four">
+        <a href="blog">
+          <img src="{% static "img/aislider.jpg"%}" alt="">
+
+          <span class="text-caption">
+            artificial intelligence technology
+          </span>
+
+          <span class="title-caption">
+            AI Section
+          </span>
+        </a>
+      </div>
+
+      <div class="slidex five">
+        <a href="blog">
+          <img src="{% static "img/slider.img1.jpg"%}" alt="">
+
+          <span class="text-caption">
+            latest gaming news & it 's details
+          </span>
+
+          <span class="title-caption">
+            Gamer Section
+          </span>
+        </a>
+      </div>
+    </section>
+  </section>
+
+  <div class="bg-gray-800 min-h-screen">
+    <div class="max-w-screen-xl mx-auto px-4 pt-8 pb-4">
+      <h2 class="border-b-2 border-yellow-600 mb-4"><span class="bg-yellow-600 px-2 py-1 text-white uppercase tracking-wide">Trending</span></h2>
+      <div class="flex flex-col flex-wrap md:flex-row md:-mx-2">
+        <div class="w-full md:w-1/2 lg:w-1/4 mb-4 lg:mb-0">
+          <a href="blog" class="h-72 md:h-96 block group relative md:mx-2 overflow-hidden">
+            <img src="https://storage.ning.com/topology/rest/1.0/file/get/12304910469?profile=original" class="absolute z-0 object-cover w-full h-72 md:h-96 transform group-hover:scale-150">
+            <div class="absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-90 w-full h-72 md:h-96 z-10"></div>
+            <div class="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-full group-hover:translate-y-0 delay-100">
+              <div class="h-1/2 relative">
+                <div class="absolute bottom-0">
+                  <h2 class="font-bold text-white leading-tight transition duration-300 text-xl pb-6 group-hover:underline">Lorem ipsum dolor sit amet</h2>
+                </div>
+              </div>
+              <div class="h-1/2">
+                <p class="text-white pb-4 opacity-0 transition duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis.</p>
+                <button class="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-300 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="h-72 md:h-96 w-full md:w-1/2 lg:w-1/4 mb-4 lg:mb-0">
+          <a href="blog" class="h-72 md:h-96 block group relative md:mx-2 overflow-hidden">
+            <img src="https://storage.ning.com/topology/rest/1.0/file/get/12304910858?profile=RESIZE_710x" class="absolute z-0 object-cover w-full h-72 md:h-96">
+            <div class="absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-90 w-full h-72 md:h-96 z-100"></div>
+            <div class="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-full group-hover:translate-y-0 delay-100">
+              <div class="h-1/2 relative">
+                <div class="absolute bottom-0">
+                  <h2 class="font-bold text-white leading-tight transition duration-300 text-xl pb-6 group-hover:underline">Lorem ipsum dolor sit amet</h2>
+                </div>
+              </div>
+              <div class="h-1/2">
+                <p class="text-white pb-4 opacity-0 transition duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis.</p>
+                <button class="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-300 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="h-72 md:h-96 w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-0">
+          <a href="blog" class="h-72 md:h-96 block group relative md:mx-2 overflow-hidden">
+            <img src="https://storage.ning.com/topology/rest/1.0/file/get/12224387295?profile=original" class="absolute z-0 object-cover w-full h-72 md:h-96">
+            <div class="absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-90 w-full h-72 md:h-96 z-10"></div>
+            <div class="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-full group-hover:translate-y-0 delay-100">
+              <div class="h-1/2 relative">
+                <div class="absolute bottom-0">
+                  <h2 class="font-bold text-white leading-tight transition duration-300 text-xl pb-6 group-hover:underline">Lorem ipsum dolor sit amet</h2>
+                </div>
+              </div>
+              <div class="h-1/2">
+                <p class="text-white pb-4 opacity-0 transition duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis.</p>
+                <button class="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-300 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="h-72 md:h-96 w-full md:w-1/2 lg:w-1/4 mb-4 md:mb-0">
+          <a href="blog" class="h-72 md:h-96 block group relative md:mx-2 overflow-hidden">
+            <img src="https://storage.ning.com/topology/rest/1.0/file/get/12237787697?profile=original" class="absolute z-0 object-cover w-full h-72 md:h-96">
+            <div class="absolute gradient transition duration-300 group-hover:bg-black group-hover:opacity-90 w-full h-72 md:h-96 z-10"></div>
+            <div class="absolute left-0 right-0 bottom-0 p-6 z-30 transform translate-y-1/2 transition duration-300 h-full group-hover:translate-y-0 delay-100">
+              <div class="h-1/2 relative">
+                <div class="absolute bottom-0">
+                  <h2 class="font-bold text-white leading-tight transition duration-300 text-xl pb-6 group-hover:underline">Lorem ipsum dolor sit amet</h2>
+                </div>
+              </div>
+              <div class="h-1/2">
+                <p class="text-white pb-4 opacity-0 transition duration-300 group-hover:opacity-100">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis.</p>
+                <button class="bg-white text-black text-sm px-3 py-1 font-semibold opacity-0 transition duration-300 group-hover:opacity-100 border-2 border-white focus:border-black focus:bg-gray-300">Read More</button>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col flex-wrap md:flex-row md:-mx-4 my-8">
+        <div class="w-full md:w-2/3 mb-4 lg:mb-0">
+          <div class="md:mx-4">
+            <h2 class="border-b-2 border-red-600 mb-4"><span class="bg-red-600 px-2 py-1 text-white uppercase tracking-wide">Latest</span></h2>
+            {% for Post in posts%}
+
+            <div class="flex flex-wrap items-center md:-mx-2">
+              <div class="w-full md:w-3/12">
+                <div class="md:mx-2">
+                  <img src="{{ Post.image.url }}" class="w-full mb-4 md:mb-0">
+              </div>
+              </div>
+
+              
+
+              <div class="md:w-9/12">
+                <div class="md:mx-2">
+                  <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="{% url 'blog' post_id=Post.id %}" class="text-white hover:underline">{{Post.title}}</a></h2>
+                  <p class="text-gray-400 pb-2">{{Post.content|truncatewords:30}}</p>
+                  <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">{{Post.date_posted|date:"F d, Y"}}</time> by <a href="#" class="underline hover:no-underline">{{Post.author}}</a></div>
+                </div>
+              </div>
+              <div class="w-full mb-5 pb-5 border-b border-gray-700 md:mx-2"></div>
+            </div>
+              {% endfor %}
+
+            <div class="flex flex-wrap items-center md:-mx-2">
+              <div class="w-full md:w-3/12">
+                <div class="md:mx-2">
+                  <img src="{% static "img/python.jpg"%}" class="w-full mb-4 md:mb-0">
+                </div>
+              </div>
+              <div class="md:w-9/12">
+                <div class="md:mx-2">
+                  <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">Python 3.13.0 alpha 3 is now available</a></h2>
+                  <p class="text-gray-400 pb-2">We silently skipped releasing in December (it was too close to the holidays, a lot of people were away) so by date you may have been expecting alpha 4, but instead it’s alpha 3</p>
+                  <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+                </div>
+              </div>
+              <div class="w-full mb-5 pb-5 border-b border-gray-700 md:mx-2"></div>
+            </div>
+
+            <div class="flex flex-wrap items-center md:-mx-2">
+              <div class="w-full md:w-3/12">
+                <div class="md:mx-2">
+                  <img src="{% static "img/Gta VI.jpg"%}" class="w-full mb-4 md:mb-0">
+                  <img >
+                </div>
+                
+              </div>
+              <div class="md:w-9/12">
+                <div class="md:mx-2">
+                  <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">Grand Theft Auto VI News</a></h2>
+                  <p class="text-gray-400 pb-2">GTA VI Members Get Access to the New Vinewood Club Garage, a Free Declasse Impaler LX, and Much More.</p>
+                  <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+                </div>
+              </div>
+              <div class="w-full mb-5 pb-5 border-b border-gray-700 md:mx-2"></div>
+            </div>
+
+            <div class="flex flex-wrap items-center md:-mx-2">
+              <div class="w-full md:w-3/12">
+                <div class="md:mx-2">
+                  <img src="{% static "img/notcoinlogo.png"%}" class="w-full mb-4 md:mb-0">
+                </div>    
+              </div>    
+              <div class="md:w-9/12">
+                <div class="md:mx-2">
+                  <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">Notcoin, Telegram's Smart Blockchain</a></h2>
+                  <p class="text-gray-400 pb-2">A new smart blockchain based marketplace for trading digital goods and assets according to users interests. Automatic unique artificial intelligence approach.</p>
+                  <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+                </div>
+              </div>
+              <div class="w-full mb-5 pb-5 border-b border-gray-700 md:mx-2"></div>
+            </div>
+
+            <div class="flex flex-wrap items-center md:-mx-2">
+              <div class="w-full md:w-3/12">
+                <div class="md:mx-2">
+                  <img src="{% static "img/meimonnejad.jpg"%}" class="w-full mb-4 md:mb-0">
+                </div>
+              </div>
+              <div class="md:w-9/12">
+                
+                <div class="md:mx-2">
+                  <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">Mahmod the gangster of idiots</a></h2>
+                  <p class="text-gray-400 pb-2">Six politicians given go-ahead to run in presidential election, which is likely to boil down to a three-man race on 19 May Published:20 Apr 2017</p>
+                  <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+                </div>
+              </div>
+              <div class="w-full mb-5 pb-5 border-b border-gray-700 md:mx-2"></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 mb-4 lg:mb-0">
+
+          <div class="md:mx-4">
+            <h2 class="border-b-2 border-indigo-600 mb-4"><span class="bg-indigo-600 px-2 py-1 text-white uppercase tracking-wide">Featured</span></h2>
+            <img src="{% static "img/asus.jpg"%}" class="w-full mb-4">
+            <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">ROG Handheld Gaming Consoles</a></h2>
+            <p class="text-gray-400 pb-2">The ROG Ally delivers impressive gaming performance but navigation could be more intuitive and battery life is a limiting factor</p>
+            <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+          </div><br>
+
+          <div class="md:mx-4">
+            <img src="{% static "img/redrog.jpg"%}" class="w-full mb-4">
+            <h2 class="text-white font-bold text-2xl pb-4 leading-tight"><a href="blog" class="text-white hover:underline">ROG Handheld Gaming Consoles</a></h2>
+            <p class="text-gray-400 pb-2">The ROG Ally delivers impressive gaming performance but navigation could be more intuitive and battery life is a limiting factor</p>
+            <div class="text-gray-200 inline-block py-1 italic text-sm">Posted on: <time datetime="2021-11-19 20:00">November 19, 2024</time> by <a href="#" class="underline hover:no-underline">Nikolas Tesla</a></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <section class="contact position-relative z-index-1 padding-y-xl">
+    <div class="container max-width-lg">
+      
+  <!-- Auto Card Slider -->
+  <div class="auto_slider owl-carousel">
+
+    <!-- Card Game Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/gaming.jpg"%}" alt="Game">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Games
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Game End -->
+
+    <!-- Card Pyton Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/python.jpg"%}" alt="Pyton">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Pyton
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Pyton End -->
+
+    <!-- Card Html / Css / Js Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/html.css.js.jpg"%}" alt="Html / Css / Js">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Html / Css / Js
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Html / Css / Js End -->
+
+    <!-- Card Cyber Security Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/cyber.security.jpg"%}" alt="Cyber Security">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Cyber Security
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Cyber Security End -->
+
+    <!-- Card FrontEnd Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/frontend.jpg"%}" alt="FrontEnd">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          FrontEnd
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card FrontEnd End -->
+
+    <!-- Card BackEnd Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/backend.jpg"%}" alt="BackEnd">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          BackEnd
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card BackEnd End -->
+
+    <!-- Card Django Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/django.jpg"%}" alt="Django">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Django
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Django End -->
+
+    <!-- Card Hardware Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/hardware.jpg"%}" alt="Hardware">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          Hardware
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card Hardware End -->
+
+    <!-- Card CAC News Start -->
+    <div class="auto_slider_card">
+
+      <div class="auto_slider_img">
+        <img class="auto_slider_image" src="{% static "img/cacnews.jpg"%}" alt="CAC News">
+      </div>
+
+      <div class="auto_slider_content">
+
+        <div class="auto_slider_title">
+          CAC News
+        </div>
+        <p class="auto_slider_p">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit modi dolorem quis quae animi nihil minus sed unde voluptas cumque.
+        </p>
+        <a href="blog" class="auto_slider_btn">
+          <button class="auto_slider_button">Read more</button>
+        </a>
+      </div>
+
+    </div>
+    <!-- Card CAC News End -->
+  
+  </div>
+
+    </div>
+  </section>
+
+
+  <div class="sticky-sharebar js-sticky-sharebar">
+    <ul class="sticky-sharebar__list">
+      <li>
+        <a class="sticky-sharebar__btn js-social-share" data-social="twitter"
+          data-text="Hi there! https://codyhouse.co via @CodyWebHouse" data-hashtags="#nuggets, #dev"
+          href="https://twitter.com/intent/tweet">
+          <svg class="icon" viewBox="0 0 32 32">
+            <title>Share on Twitter</title>
+            <g>
+              <path
+                d="M32,6.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.7,3.8,24,3,22.2,3 c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,10.8,5.5,8.2,2.2,4.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5 c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1C2.9,27.9,6.4,29,10.1,29c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C30,8.5,31.1,7.4,32,6.1z">
+              </path>
+            </g>
+          </svg>
+        </a>
+      </li>
+
+      <li>
+        <a class="sticky-sharebar__btn js-social-share" data-social="facebook" data-url="https://codyhouse.co"
+          href="http://www.facebook.com/sharer.php">
+          <svg class="icon" viewBox="0 0 32 32">
+            <title>Share on Facebook</title>
+            <path
+              d="M32,16A16,16,0,1,0,13.5,31.806V20.625H9.438V16H13.5V12.475c0-4.01,2.389-6.225,6.043-6.225a24.644,24.644,0,0,1,3.582.312V10.5H21.107A2.312,2.312,0,0,0,18.5,13v3h4.438l-.71,4.625H18.5V31.806A16,16,0,0,0,32,16Z">
+            </path>
+          </svg>
+        </a>
+      </li>
+
+      <li>
+        <a class="sticky-sharebar__btn js-social-share" data-social="pinterest"
+          data-description="Description for my Pinterest share"
+          data-media="https://codyhouse.co/app/assets/img/social-sharing-img-1.jpg"
+          href="http://pinterest.com/pin/create/button">
+          <svg class="icon" viewBox="0 0 32 32">
+            <title>Share on Pinterest</title>
+            <g>
+              <path
+                d="M16,0C7.2,0,0,7.2,0,16c0,6.8,4.2,12.6,10.2,14.9c-0.1-1.3-0.3-3.2,0.1-4.6c0.3-1.2,1.9-8,1.9-8 s-0.5-1-0.5-2.4c0-2.2,1.3-3.9,2.9-3.9c1.4,0,2,1,2,2.3c0,1.4-0.9,3.4-1.3,5.3c-0.4,1.6,0.8,2.9,2.4,2.9c2.8,0,5-3,5-7.3 c0-3.8-2.8-6.5-6.7-6.5c-4.6,0-7.2,3.4-7.2,6.9c0,1.4,0.5,2.8,1.2,3.7c0.1,0.2,0.1,0.3,0.1,0.5c-0.1,0.5-0.4,1.6-0.4,1.8 C9.5,21.9,9.3,22,9,21.8c-2-0.9-3.2-3.9-3.2-6.2c0-5,3.7-9.7,10.6-9.7c5.6,0,9.9,4,9.9,9.2c0,5.5-3.5,10-8.3,10 c-1.6,0-3.1-0.8-3.7-1.8c0,0-0.8,3.1-1,3.8c-0.4,1.4-1.3,3.1-2,4.2c1.5,0.5,3.1,0.7,4.7,0.7c8.8,0,16-7.2,16-16C32,7.2,24.8,0,16,0z ">
+              </path>
+            </g>
+          </svg>
+        </a>
+      </li>
+
+      <li>
+        <a class="sticky-sharebar__btn js-social-share" data-social="linkedin" data-url="http://codyhouse.co"
+          href="https://www.linkedin.com/shareArticle">
+          <svg class="icon" viewBox="0 0 32 32">
+            <title>Share on Linkedin</title>
+            <g>
+              <path
+                d="M29,1H3A2,2,0,0,0,1,3V29a2,2,0,0,0,2,2H29a2,2,0,0,0,2-2V3A2,2,0,0,0,29,1ZM9.887,26.594H5.374V12.25H9.887ZM7.63,10.281a2.625,2.625,0,1,1,2.633-2.625A2.624,2.624,0,0,1,7.63,10.281ZM26.621,26.594H22.2V19.656c0-1.687,0-3.75-2.35-3.75s-2.633,1.782-2.633,3.656v7.126H12.8V12.25h4.136v1.969h.094a4.7,4.7,0,0,1,4.231-2.344c4.513,0,5.359,3,5.359,6.844Z">
+              </path>
+            </g>
+          </svg>
+        </a>
+      </li>
+
+      <li>
+        <a class="sticky-sharebar__btn js-social-share" data-social="mail" data-subject="Email Subject"
+          data-body="Content of my email." href="mailto:">
+          <svg class="icon" viewBox="0 0 32 32">
+            <title>Share by Email</title>
+            <g>
+              <path
+                d="M28,3H4A3.957,3.957,0,0,0,0,7V25a3.957,3.957,0,0,0,4,4H28a3.957,3.957,0,0,0,4-4V7A3.957,3.957,0,0,0,28,3Zm.6,6.8-12,9a1,1,0,0,1-1.2,0l-12-9A1,1,0,0,1,4.6,8.2L16,16.75,27.4,8.2a1,1,0,1,1,1.2,1.6Z">
+              </path>
+            </g>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <progress aria-hidden="true" class="reset reading-progressbar js-reading-progressbar" max="100" value="0">
+    <div class="reading-progressbar__fallback js-reading-progressbar__fallback"></div>
+  </progress>
+
+  <!-- footer -->
+  <!-- <footer class="main-footer position-relative z-index-1 padding-top-xl">
+    <div class="container max-width-lg">
+      <div class="grid gap-lg">
+        <div class="col-3@lg order-2@lg text-right@lg">
+          <a class="main-footer__logo" href="#0">
+            <img src="{% static "img/logo.png"%}" alt="Testimonial picture">
+          </a>
+          <a class="td-text-block font-secondary" href="#0" aria-label="Join our club">
+            <span class="td-text-block__wrapper">
+              <em class="td-text-block__front-text">Code Architects Collective</em>
+              <em style="text-align: center;" class="td-text-block__final-text">CAC Cooperation &rarr;</em>
+            </span>
+          </a>
+        </div>
+
+        <nav class="col-9@lg order-1@lg">
+          <ul class="grid gap-lg">
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm">Product</h4>
+              <ul class="grid gap-xs">
+                <li><a href="#0" class="main-footer__link">Pricing</a></li>
+                <li><a href="#0" class="main-footer__link">Teams</a></li>
+                <li><a href="#0" class="main-footer__link">Updates</a></li>
+                <li><a href="#0" class="main-footer__link">Features</a></li>
+                <li><a href="#0" class="main-footer__link">Integrations</a></li>
+                <li><a href="#0" class="main-footer__link">Support</a></li>
+              </ul>
+            </li>
+
+
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm">Developers</h4>
+              <ul class="grid gap-xs">
+                <li><a href="#0" class="main-footer__link">Documentation</a></li>
+                <li><a href="#0" class="main-footer__link">API reference</a></li>
+                <li><a href="#0" class="main-footer__link">API status</a></li>
+                <li><a href="#0" class="main-footer__link">Open source</a></li>
+              </ul>
+            </li>
+
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm">Resources</h4>
+              <ul class="grid gap-xs">
+                <li><a href="#0" class="main-footer__link">Tutorials</a></li>
+                <li><a href="#0" class="main-footer__link">Docs</a></li>
+                <li><a href="#0" class="main-footer__link">Community</a></li>
+                <li><a href="#0" class="main-footer__link">Case studies</a></li>
+                <li><a href="#0" class="main-footer__link">Help center</a></li>
+              </ul>
+            </li>
+
+            <li class="col-6@xs col-3@md">
+              <h4 class="margin-bottom-sm">About</h4>
+              <ul class="grid gap-xs">
+                <li><a href="#0" class="main-footer__link">Company</a></li>
+                <li><a href="#0" class="main-footer__link">Customers</a></li>
+                <li><a href="#0" class="main-footer__link">Careers</a></li>
+                <li><a href="#0" class="main-footer__link">Education</a></li>
+                <li><a href="#0" class="main-footer__link">Our story</a></li>
+                <li><a href="#0" class="main-footer__link">Press kit</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div
+        class="flex flex-column border-top padding-y-xs margin-top-lg flex-row@md justify-between@md items-center@md">
+        <div class="margin-bottom-sm margin-bottom-0@md">
+          <div class="text-sm text-xs@md color-contrast-medium flex flex-wrap gap-xs">
+            <span>&copy;CAC cooperation</span>
+            <a href="#0" class="color-contrast-high">Terms</a>
+            <a href="#0" class="color-contrast-high">Privacy</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-xs">
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16">
+              <title>Follow us on Twitter</title>
+              <g>
+                <path
+                  d="M16,3c-0.6,0.3-1.2,0.4-1.9,0.5c0.7-0.4,1.2-1,1.4-1.8c-0.6,0.4-1.3,0.6-2.1,0.8c-0.6-0.6-1.5-1-2.4-1 C9.3,1.5,7.8,3,7.8,4.8c0,0.3,0,0.5,0.1,0.7C5.2,5.4,2.7,4.1,1.1,2.1c-0.3,0.5-0.4,1-0.4,1.7c0,1.1,0.6,2.1,1.5,2.7 c-0.5,0-1-0.2-1.5-0.4c0,0,0,0,0,0c0,1.6,1.1,2.9,2.6,3.2C3,9.4,2.7,9.4,2.4,9.4c-0.2,0-0.4,0-0.6-0.1c0.4,1.3,1.6,2.3,3.1,2.3 c-1.1,0.9-2.5,1.4-4.1,1.4c-0.3,0-0.5,0-0.8,0c1.5,0.9,3.2,1.5,5,1.5c6,0,9.3-5,9.3-9.3c0-0.1,0-0.3,0-0.4C15,4.3,15.6,3.7,16,3z">
+                </path>
+              </g>
+            </svg>
+          </a>
+
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16">
+              <title>Follow us on Youtube</title>
+              <g>
+                <path
+                  d="M15.8,4.8c-0.2-1.3-0.8-2.2-2.2-2.4C11.4,2,8,2,8,2S4.6,2,2.4,2.4C1,2.6,0.3,3.5,0.2,4.8C0,6.1,0,8,0,8 s0,1.9,0.2,3.2c0.2,1.3,0.8,2.2,2.2,2.4C4.6,14,8,14,8,14s3.4,0,5.6-0.4c1.4-0.3,2-1.1,2.2-2.4C16,9.9,16,8,16,8S16,6.1,15.8,4.8z M6,11V5l5,3L6,11z">
+                </path>
+              </g>
+            </svg>
+          </a>
+
+          <a href="#0" class="main-footer__social">
+            <svg class="icon block" viewBox="0 0 16 16">
+              <title>Follow us on Github</title>
+              <g>
+                <path
+                  d="M8,0.2c-4.4,0-8,3.6-8,8c0,3.5,2.3,6.5,5.5,7.6 C5.9,15.9,6,15.6,6,15.4c0-0.2,0-0.7,0-1.4C3.8,14.5,3.3,13,3.3,13c-0.4-0.9-0.9-1.2-0.9-1.2c-0.7-0.5,0.1-0.5,0.1-0.5 c0.8,0.1,1.2,0.8,1.2,0.8C4.4,13.4,5.6,13,6,12.8c0.1-0.5,0.3-0.9,0.5-1.1c-1.8-0.2-3.6-0.9-3.6-4c0-0.9,0.3-1.6,0.8-2.1 c-0.1-0.2-0.4-1,0.1-2.1c0,0,0.7-0.2,2.2,0.8c0.6-0.2,1.3-0.3,2-0.3c0.7,0,1.4,0.1,2,0.3c1.5-1,2.2-0.8,2.2-0.8 c0.4,1.1,0.2,1.9,0.1,2.1c0.5,0.6,0.8,1.3,0.8,2.1c0,3.1-1.9,3.7-3.7,3.9C9.7,12,10,12.5,10,13.2c0,1.1,0,1.9,0,2.2 c0,0.2,0.1,0.5,0.6,0.4c3.2-1.1,5.5-4.1,5.5-7.6C16,3.8,12.4,0.2,8,0.2z">
+                </path>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+  <!-- // scroll to top button -->
+  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+  <!-- // scroll to top button -->
+  <style>
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: #b81d18;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+  </style>
+  <script>
+
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+  
+  .contact{
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+    
+  }
+  .auto_slider {
+    max-width: 100%;
+    display: flex;
+    font-family: "Poppins", sans-serif;
+    place-items: center;
+    text-align: center;
+  }
+  .auto_slider_card {
+    flex: 1;
+    margin: 0 10px;
+    background: #fff;
+  }
+  .auto_slider_img {
+    height: 200px;
+    width: 100%;
+  }
+  .auto_slider_image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .auto_slider_content {
+    padding: 10px 20px;
+  }
+  .auto_slider_title {
+    font-size: 25px;
+    font-weight: 600;
+  }
+  
+  .auto_slider_p {
+    text-align: justify;
+    margin: 10px 0;
+  }
+  .auto_slider_btn {
+    display: block;
+    text-align: left;
+    margin: 10px 0;
+  }
+  .auto_slider_button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  .auto_slider_button:hover {
+    transform: scale(0.9);
+  }
+  
+  </style>
+  </div>
+</body>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("xmyModal");
+  
+  // Get the button that opens the modal
+  var btn = document.getElementById("xmyBtn");
+  
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("xclose")[0];
+  
+  // When the user clicks the button, open the modal 
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+<style>
+    /* The Modal (background) */
+.xmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.xmodal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 45.5%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.xclose {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.xclose:hover,
+.xclose:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.xmodal-header {
+  padding: 2px 16px;
+  background-color: #b81d18;
+  color: white;
+}
+
+.smallformtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.xmodal-body {padding: 2px 16px;}
+
+.xmodal-footer {
+  padding: 2px 16px;
+  background-color: #b81d18;
+  color: white;
+}
+</style>
+
+<style>
+  .sliderx_container {
+    position: relative;
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .sliderx {
+    position: relative;
+    width: 400%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    animation: 30s cubic-bezier(1, 0.95, 0.565, 1) sliding infinite;
+  }
+
+  .slidex {
+    position: relative;
+    min-width: 100%;
+    height: 100%;
+  }
+
+  .slidex img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .slidex .title-caption {
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    font-size: 5rem;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+    background: rgba(0, 0, 0, 0.348);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5rem;
+    border-radius: 0 2rem 2rem 0;
+  }
+
+  .slidex .text-caption {
+    position: absolute;
+    left: 0;
+    top: 5%;
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    text-transform: capitalize;
+    background: rgba(0, 0, 0, 0.348);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5rem;
+    text-align: center;
+  }
+
+  .slidex.one {
+    background: rgb(182, 19, 109);
+  }
+
+  .slidex.two {
+    background: rgb(255, 64, 64);
+  }
+
+  .slidex.three {
+    background: rgb(11, 173, 188);
+  }
+
+  .slidex.four {
+    background: rgb(11, 188, 14);
+  }
+
+  .slidex.five {
+    background: rgb(173, 11, 188);
+  }
+
+  @keyframes sliding {
+    0% {
+      transform: translateX(0%);
+    }
+
+    20% {
+      transform: translateX(0%);
+    }
+
+    25% {
+      transform: translateX(-100%);
+    }
+
+    45% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(-200%);
+    }
+
+    70% {
+      transform: translateX(-200%);
+    }
+
+    75% {
+      transform: translateX(-300%);
+    }
+
+    95% {
+      transform: translateX(-300%);
+    }
+
+    100% {
+      transform: translateX(-400%);
+    }
+
+  }
+</style>
+
+<style>
+  :root {
+    background: #f5f6fa;
+    color: #9c9c9c;
+    font: 1rem "PT Sans", sans-serif;
+  }
+  
+  a {
+    color: inherit;
+  }
+  a:hover {
+    color: #7f8ff4;
+  }
+  
+  .smallformcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .uppercase {
+    text-transform: uppercase;
+  }
+  
+  .login_btn {
+    display: inline-block;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    transition: all 200ms ease-in;
+    cursor: pointer;
+  }
+  .btn--primary {
+    background: #4a62ff;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    width: 146px;
+    padding: 12px 36px;
+  }
+  .btn--primary:hover {
+    background: #6c7ff2;
+  }
+  .btn--primary:active {
+    background: #4a62ff;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn--google {
+    background: red;
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    padding: 12px 36px;
+  }
+  .btn--google:hover {
+    background: rgba(255, 0, 0, 0.738);
+  }
+  .btn--google:active {
+    background: red;
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn--inside {
+    margin-left: -96px;
+  }
+  
+  .form_input {
+    width: 300px;
+    background: #fff;
+    color: #484848;
+    font: inherit;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    border: 2px solid;
+    outline: 0;
+    padding: 22px 18px;
+    margin: 6px;
+    height: 53px;
+  }
+</style>
+
+ <!-- Auto Slider -->
+<script>
+  $(".auto_slider").owlCarousel({
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 2000, //2000ms = 2s;
+    autoplayHoverPause: true,
+  });
+</script>
+<style>
+  .gradient {
+   background-image: linear-gradient(
+     to bottom,
+     rgba(243, 244, 246, 0.1),
+     rgba(0, 0, 0, 0.8)
+   );
+ }
+ 
+ .group:hover .group-hover\:translate-y-0 {
+   transform: translateY(0);
+ }
+ 
+ ::-webkit-scrollbar {
+   width: 10px;
+ }
+ 
+ /* Track */
+ ::-webkit-scrollbar-track {
+   background-color: rgba(31, 41, 55, 0.9);
+ }
+ 
+ /* Handle */
+ ::-webkit-scrollbar-thumb {
+   background-color: #4b5563;
+   border-radius: 10px;
+ }
+ 
+ /* Handle on hover */
+ ::-webkit-scrollbar-thumb:hover {
+   background: #4b5563;
+ }
+ 
+ ::selection {
+   background: rgb(107 114 128); /* WebKit/Blink Browsers */
+ }
+ ::-moz-selection {
+   background: rgb(107 114 128); /* Gecko Browsers */
+ }
+ 
+ </style>
+ <script>
+   function openNav() {
+   document.getElementById("nav").classList.remove("hidden");
+ }
+ 
+ function closeNav() {
+   document.getElementById("nav").classList.add("hidden");
+ }
+ 
+ </script>
+
+</html>
+
+{% endblock content %}

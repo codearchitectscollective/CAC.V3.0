@@ -1,0 +1,38 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"   rel="stylesheet">
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <title>CAC / google map</title>
+</head>
+
+<body style="background-color: black;">
+
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="container max-width-adaptive-lg">
+      <div class="p-table p-table--has-switch js-p-table--has-switch">
+          <div style="text-align: center; background-color: rgb(28, 28, 28);" class="p-table__item p-table__item--popular col-4@md">
+              <span style="color: white;font-size: 50px;">GooGle Map</span><br>                
+            <div id="calcal" style="text-align: center;" class="flex justify-center items-center margin-bottom-xxs">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6915577.824605866!2d48.394943187286906!3d32.184096893704435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef7ec2ec16b1df1%3A0x40b095d39e51face!2sIran!5e0!3m2!1sen!2sau!4v1707790849485!5m2!1sen!2sau" width="1200" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+ 
+            </div>
+
+            <div class="margin-top-auto">
+              <a href="tools" class="btn btn--primary btn--md width-100%">
+                Back to tools page
+              </a>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

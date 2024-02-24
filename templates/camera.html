@@ -1,0 +1,70 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"   rel="stylesheet">
+  <link rel="icon" type="image" href="{% static "img/titleicon.png"%}">
+  <link rel="stylesheet" href="{% static "css/style.css"%}">
+  <title>CAC / Camera</title>
+</head>
+
+<body style="background-color: black;">
+
+  <section class="position-relative z-index-1 padding-y-xl">
+    <div class="container max-width-adaptive-lg">
+      <div class="p-table p-table--has-switch js-p-table--has-switch">
+          <div style="text-align: center; background-color: rgb(28, 28, 28);" class="p-table__item p-table__item--popular col-4@md">
+
+
+            <div class="p-table__price-wrapper margin-bottom-sm">
+              <div class="p-table__price"  >
+                <span style="color: white;font-size: 40px;">Check Your Webcam Using</span> <br> 
+                <span style="color: white;font-size: 45px;">CAC Camera</span><br><br>
+                <video id="videoElement" autoplay style="width:100%;"></video>
+                <canvas style="display: none;" id="canvasElement"></canvas>              
+              </div>
+            </div>
+
+            
+
+            <div class="margin-top-auto">
+              <a href="tools" class="btn btn--primary btn--md width-100%">
+                Back to tools page
+              </a>
+              </div>
+          </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+<script>
+  // Camera settings
+ const videoElement = document.getElementById('videoElement');
+     const captureButton = document.getElementById('captureButton');
+     const canvasElement = document.getElementById('canvasElement');
+     const canvasContext = canvasElement.getContext('2d');
+ 
+     // Request access to the user's camera
+     navigator.mediaDevices.getUserMedia({ video: true })
+       .then(function(stream) {
+         videoElement.srcObject = stream;
+       })
+       .catch(function(error) {
+         console.log(error);
+       });
+ 
+     // Capture an image from the camera stream
+     captureButton.addEventListener('click', function() {
+       canvasElement.width = videoElement.videoWidth;
+       canvasElement.height = videoElement.videoHeight;
+       canvasContext.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+       const imageDataUrl = canvasElement.toDataURL('image/png');
+       console.log(imageDataUrl);
+     });
+ </script>
+</html>
